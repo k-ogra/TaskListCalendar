@@ -48,7 +48,7 @@ export default function App() {
   const login = async () => {
     try {
       const provider = new GoogleAuthProvider();
-      provider.addScope('https://www.googleapis.com/auth/calendar');
+      provider.addScope('https://www.googleapis.com/auth/calendar.events');
       const auth = getAuth(app);
       const result = await signInWithPopup(auth, provider);
       const credential = GoogleAuthProvider.credentialFromResult(result);
