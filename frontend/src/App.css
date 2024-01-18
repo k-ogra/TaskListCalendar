@@ -140,12 +140,16 @@ h2 {
   position: relative;
   left: 10px;
   cursor: pointer;
+  color: black;
+  font-weight: bold;
 }
 
 .end {
   position: relative;
   left: 10px;
   cursor: pointer;
+  color: black;
+  font-weight: bold;
 }
 
 .add-task-calendar {
