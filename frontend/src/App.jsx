@@ -86,7 +86,9 @@ export default function App() {
 
   const handleForm = (e) => {
     e.preventDefault();
-    axios.post(import.meta.env.VITE_CALENDAR_URL, {currentTitle, startTime, endTime});
+    const startTimeDate = new Date(startTime);
+    const endTimeDate = new Date(endTime);
+    axios.post(import.meta.env.VITE_CALENDAR_URL, {currentTitle, startTimeDate, endTimeDate});
     alert("Task successfully added to Google Calendar!");
   }
 

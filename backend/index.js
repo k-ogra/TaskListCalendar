@@ -27,7 +27,7 @@ app.post('/auth/google', async (req, res) => {
 });
 
 app.use('/create-event', async (req, res) => {
-    const { currentTitle, startTime, endTime } = await req.body;
+    const { currentTitle, startTimeDate, endTimeDate } = await req.body;
     const calendar = google.calendar('v3');
     await calendar.events.insert({
     auth: oAuth2Client,
@@ -36,10 +36,10 @@ app.use('/create-event', async (req, res) => {
       summary: currentTitle,
       colorId: "3",
       start: {
-        dateTime: new Date(startTime),
+        dateTime: startTimeDate,
       },
       end: {
-        dateTime: new Date(endTime),
+        dateTime: endTimeDate,
       }
           }
             }).catch((error) => {
